@@ -21,6 +21,8 @@ Route::post('/register', [RegisterController::class, 'index']);
 Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/category', [CategoryController::class, 'show']);
+
 Route::get('/subcategory', [SubcategoryController::class, 'index']);
+Route::get('/search', [SubcategoryController::class, 'search']);
 Route::get('/subcategory/{subcategory:category_id}', [SubcategoryController::class, 'show']);
 Route::get('/subcategory/{subcategory:id}/details', [SubcategoryController::class, 'see']);

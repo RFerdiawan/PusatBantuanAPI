@@ -35,8 +35,8 @@ class SubcategoryController extends Controller
     {
         $subcategory = collect();
 
-        if ($request->has('category_id')) {
-            $subcategory = Subcategory::where('category_id', 'LIKE', '%' . $request->category_id . '%')->get();
+        if ($request->has('pertanyaan')) {
+            $subcategory = Subcategory::where('pertanyaan', 'LIKE', '%' . $request->pertanyaan . '%')->get();
         }
 
         if ($subcategory->isEmpty()) {
@@ -45,5 +45,6 @@ class SubcategoryController extends Controller
                 'Desc' => 'entry not found',
             ]);
         }
+        return $subcategory;
     }
 }
